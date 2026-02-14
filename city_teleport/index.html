@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>City Teleport – How It Works</title>
+
+<style>
+:root {
+  --bg: #0d0d0f;
+  --card: #16161a;
+  --text: #ffffff;
+  --subtext: #b5b5c0;
+  --accent: #4f9cff;
+  --border: #2a2a33;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  padding: 16px;
+  max-width: 480px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 24px 0 12px;
+}
+
+p {
+  color: var(--subtext);
+  font-size: 14px;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid var(--border);
+}
+
+/* Before / After (auto height) */
+.before-after {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  max-height: 80vh;
+}
+
+/* Invisible image that controls height */
+.before-after .size-ref {
+  position: relative;
+  width: 100%;
+  visibility: hidden;
+}
+
+.before-after img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.after-img {
+  clip-path: inset(0 0 0 50%);
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.slider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--accent);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 700;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 14px;
+}
+
+/* Feature Pills */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--subtext);
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+}
+
+.step span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* List */
+ul {
+  padding-left: 18px;
+}
+
+li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--subtext);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🏙️ City Teleport</h1>
+  <p>Create realistic city portraits with full control over shot and angle.</p>
+
+  <!-- Before / After -->
+  <div class="card">
+    <h2>Before / After Preview</h2>
+
+    <div class="before-after">
+      <!-- Controls height -->
+      <img
+        src="https://v3.fal.media/files/kangaroo/qsFWu-bO3FwcTQSym9HeL_e52f70668f2940a3b4ea2cab54fcb65b.png"
+        class="size-ref"
+        alt=""
+      />
+
+      <!-- Before -->
+      <img
+        src="https://v3.fal.media/files/kangaroo/qsFWu-bO3FwcTQSym9HeL_e52f70668f2940a3b4ea2cab54fcb65b.png"
+        alt="Before Image"
+      />
+
+      <!-- After -->
+      <img
+        src="https://v3b.fal.media/files/b/zebra/IxujEn7zMTwi7JwUFayG0_d0810ad048a24c6d9d80a68c4325a675.png"
+        class="after-img"
+        alt="After Image"
+      />
+
+      <div class="slider"></div>
+      <div class="slider-handle">↔</div>
+    </div>
+
+    <input type="range" min="0" max="100" value="50" id="range">
+  </div>
+
+  <!-- What is -->
+  <div class="card">
+    <h2>What is City Teleport?</h2>
+    <p>
+      City Teleport uses AI to place a person into any city environment while
+      preserving facial features, pose, and lighting. You can control the
+      photo shot, camera angle, and upload your own city image as the background.
+    </p>
+
+    <div class="pills">
+      <div class="pill">Half / Full body</div>
+      <div class="pill">Front / Side angle</div>
+      <div class="pill">Wide / Close shot</div>
+      <div class="pill">Custom city upload</div>
+      <div class="pill">Realistic lighting</div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <span>1️⃣ Upload Your Photo</span>
+      <p>Upload a clear photo and choose the photo shot.</p>
+    </div>
+
+    <div class="step">
+      <span>2️⃣ Select Camera Angle</span>
+      <p>Select front, side, or wide camera angles.</p>
+    </div>
+
+    <div class="step">
+      <span>3️⃣ Choose City Background</span>
+      <p>Select a preset city or upload your own city image.</p>
+    </div>
+
+    <div class="step">
+      <span>4️⃣ Generate Image</span>
+      <p>AI blends everything into a realistic city portrait.</p>
+    </div>
+  </div>
+
+  <!-- Best For -->
+  <div class="card">
+    <h2>Best Use Cases</h2>
+    <ul>
+      <li>Travel-style portraits</li>
+      <li>Social media content</li>
+      <li>Profile & portfolio photos</li>
+      <li>Marketing visuals</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+const range = document.getElementById("range");
+const afterImg = document.querySelector(".after-img");
+const slider = document.querySelector(".slider");
+const handle = document.querySelector(".slider-handle");
+
+range.addEventListener("input", (e) => {
+  const value = e.target.value;
+  afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
+  slider.style.left = value + "%";
+  handle.style.left = value + "%";
+});
+</script>
+
+</body>
+</html>
