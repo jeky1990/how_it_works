@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Face Swap – How It Works</title>
+
+    <style>
+        :root {
+            --bg: #0d0d0f;
+            --card: #16161a;
+            --text: #ffffff;
+            --subtext: #b5b5c0;
+            --accent: #4f9cff;
+            --border: #2a2a33;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+
+        .container {
+            padding: 16px;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            color: var(--subtext);
+            font-size: 14px;
+        }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 16px;
+            border: 1px solid var(--border);
+        }
+
+        /* Images layout */
+        .input-row {
+            display: flex;
+            gap: 8px;
+            justify-content: space-between;
+        }
+
+        .input-row img,
+        .output img {
+            width: 48%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        /* Output image */
+        .output {
+            margin-top: 16px;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--subtext);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>🤝 AI Face Swap</h1>
+        <p>Swap one person's face onto another photo with realistic blending.</p>
+
+        <!-- Input Images -->
+        <div class="card">
+            <h2>Input Images</h2>
+            <div class="input-row">
+                <img src="https://images.pexels.com/photos/1642228/pexels-photo-1642228.jpeg" alt="Source Face" />
+                <img src="https://wpmedia.wonderwall.com/2024/02/09103702/shutterstock_editorial_1581851a.jpg"
+                    alt="Target Image" />
+            </div>
+            <p style="margin-top: 8px; font-size:13px;">Source face on left — Target on right</p>
+        </div>
+
+        <!-- Output Image -->
+        <div class="card output">
+            <h2>Swapped Output</h2>
+            <img src="https://ai-tests.angeneraltest.com/test-files/faceswapimage.jpg" alt="Face Swapped Result" />
+        </div>
+
+        <!-- About -->
+        <div class="card">
+            <h2>What It Does</h2>
+            <p>
+                AI-FaceSwap-Image takes the face from the first image and blends it
+                onto the second image while preserving lighting, skin tone, and
+                facial expression.
+            </p>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="card">
+            <h2>Best Use Cases</h2>
+            <ul>
+                <li>Fun face swaps with friends</li>
+                <li>Create memes or creative edits</li>
+                <li>Artistic portraits with switched faces</li>
+                <li>Marketing or social media experimentation</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>
