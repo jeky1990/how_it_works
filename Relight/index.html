@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibo Edit – Relight</title>
+
+    <style>
+        :root {
+            --bg: #0d0d0f;
+            --card: #16161a;
+            --text: #ffffff;
+            --subtext: #b5b5c0;
+            --accent: #4f9cff;
+            --border: #2a2a33;
+            --input: #101014;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.5;
+        }
+
+        .container {
+            padding: 16px;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--subtext);
+        }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 16px;
+            border: 1px solid var(--border);
+        }
+
+        /* Before / After Slider */
+        .before-after {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 14px;
+            max-height: 80vh;
+        }
+
+        /* Controls height by image ratio */
+        .before-after {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            /* FIXED HEIGHT */
+            max-width: 100%;
+            background: #0b0b0d;
+            /* neutral background for letterboxing */
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .before-after img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* ASPECT FIT */
+        }
+
+        /* After image clipping */
+        .after-img {
+            clip-path: inset(0 0 0 50%);
+        }
+
+        /* Slider line */
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        /* Slider handle */
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--accent);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: 700;
+        }
+
+
+        input[type="range"] {
+            width: 100%;
+            margin-top: 14px;
+        }
+
+        /* Input info */
+        .input-group {
+            display: grid;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .select-box {
+            background: var(--input);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-size: 14px;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            gap: 12px;
+        }
+
+        .step {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .step span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* List */
+        ul {
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--subtext);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>💡 Relight</h1>
+        <p>Precisely change lighting direction and style without altering the subject.</p>
+
+        <!-- Before / After -->
+        <div class="card">
+            <h2>Before / After Preview</h2>
+
+            <div class="before-after">
+                <!-- Size reference image -->
+                <img src="https://v3b.fal.media/files/b/0a8ecd30/Wpd3Pl3kvAgJ-KZXC4ozX_colab_output%20(4).png"
+                    class="size-ref" alt="" />
+
+                <!-- Before -->
+                <img src="https://v3b.fal.media/files/b/0a8ecd30/Wpd3Pl3kvAgJ-KZXC4ozX_colab_output%20(4).png"
+                    alt="Original Image" />
+
+                <!-- After -->
+                <img src="https://v3b.fal.media/files/b/0a8ecd33/e6kSyJCpRIEzEx1WT05F7_74c3e69bc633478cb349133ce2fecf3f.png"
+                    class="after-img" alt="Relighted Image" />
+
+                <div class="slider"></div>
+                <div class="slider-handle">↔</div>
+            </div>
+
+            <input type="range" min="0" max="100" value="50" id="range">
+        </div>
+
+        <!-- Sample Input -->
+        <div class="card">
+            <h2>Sample Input</h2>
+
+            <div class="input-group">
+                <div class="select-box">
+                    Light Direction: <strong>Front</strong>
+                </div>
+                <div class="select-box">
+                    Light Type: <strong>Soft overcast daylight lighting</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- What it does -->
+        <div class="card">
+            <h2>What This Template Does</h2>
+            <p>
+                Fibo Edit – Relight modifies lighting conditions while preserving the
+                original image structure, textures, and facial details. Only lighting
+                direction and quality are changed.
+            </p>
+        </div>
+
+        <!-- How it works -->
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <span>1️⃣ Upload Image</span>
+                <p>Select the image you want to relight.</p>
+            </div>
+
+            <div class="step">
+                <span>2️⃣ Choose Light Direction</span>
+                <p>Select where the light comes from.</p>
+            </div>
+
+            <div class="step">
+                <span>3️⃣ Choose Light Style</span>
+                <p>Select the lighting mood or time of day.</p>
+            </div>
+
+            <div class="step">
+                <span>4️⃣ Generate</span>
+                <p>AI applies realistic lighting changes.</p>
+            </div>
+        </div>
+
+        <!-- Use cases -->
+        <div class="card">
+            <h2>Best Use Cases</h2>
+            <ul>
+                <li>Portrait relighting</li>
+                <li>Product photography</li>
+                <li>Studio lighting simulation</li>
+                <li>Photo enhancement</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        const range = document.getElementById("range");
+        const afterImg = document.querySelector(".after-img");
+        const slider = document.querySelector(".slider");
+        const handle = document.querySelector(".slider-handle");
+
+        range.addEventListener("input", (e) => {
+            const value = e.target.value;
+            afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
+            slider.style.left = value + "%";
+            handle.style.left = value + "%";
+        });
+    </script>
+
+</body>
+
+</html>
