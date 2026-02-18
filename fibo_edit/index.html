@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Edit – How It Works</title>
+
+    <style>
+        :root {
+            --bg: #0d0d0f;
+            --card: #16161a;
+            --text: #ffffff;
+            --subtext: #b5b5c0;
+            --accent: #4f9cff;
+            --border: #2a2a33;
+            --input: #101014;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            line-height: 1.5;
+        }
+
+        .container {
+            padding: 16px;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--subtext);
+        }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 16px;
+            border: 1px solid var(--border);
+        }
+
+        /* Before / After Slider (fixed size, aspect-fit) */
+        .before-after {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            background: #0b0b0d;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .before-after img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .after-img {
+            clip-path: inset(0 0 0 50%);
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--accent);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: 700;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin-top: 14px;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            gap: 12px;
+        }
+
+        .step {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .step span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* List */
+        ul {
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--subtext);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🧩 Image Edit</h1>
+        <p>Precise image editing using instructions and optional masks.</p>
+
+        <!-- Before / After -->
+        <div class="card">
+            <h2>Before / After Preview</h2>
+
+            <div class="before-after">
+                <!-- Before -->
+                <img src="https://v3b.fal.media/files/b/0a8b07e8/GYKVk2EVivg_MC3jRRZi3_png%20-%202026-01-13T094835.850%20(3).png"
+                    alt="Original Image" />
+
+                <!-- After -->
+                <img src="https://bria-datasets.s3.us-east-1.amazonaws.com/Liza/ewT7wv-jMgkqs7z7xQNNL_e8707c299d034feab7a64d903118098f.png"
+                    class="after-img" alt="Edited Image" />
+
+                <div class="slider"></div>
+                <div class="slider-handle">↔</div>
+            </div>
+
+            <input type="range" min="0" max="100" value="50" id="range">
+        </div>
+
+        <!-- What it does -->
+        <div class="card">
+            <h2>What This Model Does</h2>
+            <p>
+                Image Edit allows you to modify images using natural language instructions.
+                You can optionally use a mask to limit edits to specific areas, while
+                preserving realism, lighting, and image structure.
+            </p>
+        </div>
+
+        <!-- How it works -->
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <span>1️⃣ Upload an Image</span>
+                <p>Select the image you want to edit.</p>
+            </div>
+
+            <div class="step">
+                <span>2️⃣ (Optional) Add a Mask</span>
+                <p>Use a mask image to define which areas can be edited.</p>
+            </div>
+
+            <div class="step">
+                <span>3️⃣ Write an Instruction</span>
+                <p>Describe the change you want to make in plain language.</p>
+            </div>
+
+            <div class="step">
+                <span>4️⃣ Generate</span>
+                <p>The AI applies the edit with high accuracy and control.</p>
+            </div>
+        </div>
+
+        <!-- Use cases -->
+        <div class="card">
+            <h2>Best Use Cases</h2>
+            <ul>
+                <li>Targeted image edits</li>
+                <li>Mask-based retouching</li>
+                <li>Creative photo manipulation</li>
+                <li>Production-grade image control</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        const range = document.getElementById("range");
+        const afterImg = document.querySelector(".after-img");
+        const slider = document.querySelector(".slider");
+        const handle = document.querySelector(".slider-handle");
+
+        range.addEventListener("input", (e) => {
+            const value = e.target.value;
+            afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
+            slider.style.left = value + "%";
+            handle.style.left = value + "%";
+        });
+    </script>
+
+</body>
+
+</html>
