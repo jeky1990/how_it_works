@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibo Edit – Blend</title>
+
+    <style>
+        :root {
+            --bg: #0d0d0f;
+            --card: #16161a;
+            --text: #ffffff;
+            --subtext: #b5b5c0;
+            --accent: #4f9cff;
+            --border: #2a2a33;
+            --input: #101014;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+
+        .container {
+            padding: 16px;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--subtext);
+        }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 16px;
+            border: 1px solid var(--border);
+        }
+
+        /* Slider container */
+        .before-after {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            background: #0b0b0d;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .before-after img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .after-img {
+            clip-path: inset(0 0 0 50%);
+        }
+
+        /* Slider line */
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        /* Slider handle */
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--accent);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: 700;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin-top: 14px;
+        }
+
+        /* Prompt box */
+        .prompt-box {
+            margin-top: 14px;
+        }
+
+        .prompt-box textarea {
+            width: 100%;
+            min-height: 70px;
+            resize: none;
+            background: var(--input);
+            color: var(--text);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 12px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            gap: 12px;
+        }
+
+        .step {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .step span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* List */
+        ul {
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--subtext);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🧬 Blend</h1>
+        <p>Combine multiple visual elements into a single, natural composition.</p>
+
+        <!-- Preview -->
+        <div class="card">
+            <h2>Before / After</h2>
+
+            <div class="before-after">
+                <!-- Before -->
+                <img src="https://bria-datasets.s3.us-east-1.amazonaws.com/Liza/shirt.png" alt="Original Image" />
+
+                <!-- After -->
+                <img src="https://v3b.fal.media/files/b/0a8fe3c1/k5126XVfhvxFBhTLxXMB__049f240e2fc544bf92c36d080141890f.png"
+                    class="after-img" alt="Blended Image" />
+
+                <div class="slider"></div>
+                <div class="slider-handle">↔</div>
+            </div>
+
+            <input type="range" min="0" max="100" value="50" id="range">
+
+            <!-- Prompt -->
+            <div class="prompt-box">
+                <textarea readonly>
+Place the art on the shirt, keep the art exactly the same
+      </textarea>
+            </div>
+        </div>
+
+        <!-- What it does -->
+        <div class="card">
+            <h2>What This Template Does</h2>
+            <p>
+                Fibo Edit – Blend merges new visual elements into an image while
+                preserving texture, scale, lighting, and realism across complex scenes.
+            </p>
+        </div>
+
+        <!-- How it works -->
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <span>1️⃣ Upload Image</span>
+                <p>Select the base image for blending.</p>
+            </div>
+
+            <div class="step">
+                <span>2️⃣ Describe the Blend</span>
+                <p>Explain what elements should be added or combined.</p>
+            </div>
+
+            <div class="step">
+                <span>3️⃣ Generate</span>
+                <p>The AI blends elements seamlessly into the scene.</p>
+            </div>
+        </div>
+
+        <!-- Use cases -->
+        <div class="card">
+            <h2>Best Use Cases</h2>
+            <ul>
+                <li>Product mockups</li>
+                <li>Apparel design previews</li>
+                <li>Creative compositions</li>
+                <li>Marketing visuals</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        const range = document.getElementById("range");
+        const afterImg = document.querySelector(".after-img");
+        const slider = document.querySelector(".slider");
+        const handle = document.querySelector(".slider-handle");
+
+        range.addEventListener("input", (e) => {
+            const value = e.target.value;
+            afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
+            slider.style.left = value + "%";
+            handle.style.left = value + "%";
+        });
+    </script>
+
+</body>
+
+</html>
