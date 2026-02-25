@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibo Edit – Rewrite Text</title>
+
+    <style>
+        :root {
+            --bg: #0d0d0f;
+            --card: #16161a;
+            --text: #ffffff;
+            --subtext: #b5b5c0;
+            --accent: #4f9cff;
+            --border: #2a2a33;
+            --input: #101014;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+
+        .container {
+            padding: 16px;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--subtext);
+        }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 16px;
+            border: 1px solid var(--border);
+        }
+
+        /* Image row */
+        .image-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .image-row img {
+            width: 100%;
+            height: 130px;
+            object-fit: contain;
+            background: #0b0b0d;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        /* Prompt box */
+        .prompt-box {
+            margin-top: 14px;
+        }
+
+        .prompt-box textarea {
+            width: 100%;
+            min-height: 70px;
+            resize: none;
+            background: var(--input);
+            color: var(--text);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 12px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            gap: 12px;
+        }
+
+        .step {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .step span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* List */
+        ul {
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--subtext);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>✏️ Rewrite Text</h1>
+        <p>Modify existing text inside images with high accuracy.</p>
+
+        <!-- Preview -->
+        <div class="card">
+            <h2>Before & After</h2>
+
+            <div class="image-row">
+                <!-- Before -->
+                <img src="https://bria-datasets.s3.us-east-1.amazonaws.com/Liza/create_an_image_of_cake__with_text_on_it_saying___Hi_there__.png"
+                    alt="Original Image" />
+
+                <!-- After -->
+                <img src="https://v3b.fal.media/files/b/0a8fe1f2/cLh9biHQjoqeogwLEGAbu_671d52dc3e464eb590687c06aa89ac95.png"
+                    alt="Rewritten Text Image" />
+            </div>
+
+            <!-- Prompt -->
+            <div class="prompt-box">
+                <textarea readonly>FIBO Edit!</textarea>
+            </div>
+        </div>
+
+        <!-- What it does -->
+        <div class="card">
+            <h2>What This Template Does</h2>
+            <p>
+                Rewrite Text replaces existing visible text in an image
+                with new text while keeping the font style, alignment, and realism
+                consistent with the original image.
+            </p>
+        </div>
+
+        <!-- How it works -->
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <span>1️⃣ Upload Image</span>
+                <p>Select an image that already contains text.</p>
+            </div>
+
+            <div class="step">
+                <span>2️⃣ Enter New Text</span>
+                <p>Provide the text you want to appear in the image.</p>
+            </div>
+
+            <div class="step">
+                <span>3️⃣ Generate</span>
+                <p>The AI rewrites the text naturally inside the image.</p>
+            </div>
+        </div>
+
+        <!-- Use cases -->
+        <div class="card">
+            <h2>Best Use Cases</h2>
+            <ul>
+                <li>Poster & banner edits</li>
+                <li>Product text updates</li>
+                <li>Marketing creatives</li>
+                <li>Signboard or label corrections</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
