@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fibo Edit – Rewrite Text</title>
+    <title>Fibo Edit – Erase by Text</title>
 
     <style>
         :root {
@@ -81,7 +81,7 @@
 
         .prompt-box textarea {
             width: 100%;
-            min-height: 70px;
+            min-height: 60px;
             resize: none;
             background: var(--input);
             color: var(--text);
@@ -127,8 +127,8 @@
 
     <div class="container">
 
-        <h1>✏️ Rewrite Text</h1>
-        <p>Modify existing text inside images with high accuracy.</p>
+        <h1>🧽 Erase by Text</h1>
+        <p>Remove unwanted objects from images using simple text instructions.</p>
 
         <!-- Preview -->
         <div class="card">
@@ -136,17 +136,17 @@
 
             <div class="image-row">
                 <!-- Before -->
-                <img src="https://bria-datasets.s3.us-east-1.amazonaws.com/Liza/create_an_image_of_cake__with_text_on_it_saying___Hi_there__.png"
+                <img src="https://bria-datasets.s3.us-east-1.amazonaws.com/Liza/an_empty_table_in_living_room.png"
                     alt="Original Image" />
 
                 <!-- After -->
-                <img src="https://v3b.fal.media/files/b/0a8fe1f2/cLh9biHQjoqeogwLEGAbu_671d52dc3e464eb590687c06aa89ac95.png"
-                    alt="Rewritten Text Image" />
+                <img src="https://v3b.fal.media/files/b/0a8fe25c/fESAFEGnvW9SLT5Iw5pkJ_670309f55e4341eba4266418ca64b7c2.png"
+                    alt="Object Removed Image" />
             </div>
 
             <!-- Prompt -->
             <div class="prompt-box">
-                <textarea readonly>FIBO Edit!</textarea>
+                <textarea readonly>Table</textarea>
             </div>
         </div>
 
@@ -154,9 +154,9 @@
         <div class="card">
             <h2>What This Template Does</h2>
             <p>
-                Rewrite Text replaces existing visible text in an image
-                with new text while keeping the font style, alignment, and realism
-                consistent with the original image.
+                Erase by Text removes specified objects from an image
+                while naturally filling the background to maintain realism,
+                perspective, and lighting consistency.
             </p>
         </div>
 
@@ -165,17 +165,17 @@
         <div class="steps">
             <div class="step">
                 <span>1️⃣ Upload Image</span>
-                <p>Select an image that already contains text.</p>
+                <p>Select an image containing the object you want to remove.</p>
             </div>
 
             <div class="step">
-                <span>2️⃣ Enter New Text</span>
-                <p>Provide the text you want to appear in the image.</p>
+                <span>2️⃣ Enter Object Name</span>
+                <p>Describe the object to erase (e.g., “Table”, “Car”, “Person”).</p>
             </div>
 
             <div class="step">
                 <span>3️⃣ Generate</span>
-                <p>The AI rewrites the text naturally inside the image.</p>
+                <p>The AI removes the object and reconstructs the scene naturally.</p>
             </div>
         </div>
 
@@ -183,10 +183,10 @@
         <div class="card">
             <h2>Best Use Cases</h2>
             <ul>
-                <li>Poster & banner edits</li>
-                <li>Product text updates</li>
-                <li>Marketing creatives</li>
-                <li>Signboard or label corrections</li>
+                <li>Background cleanup</li>
+                <li>Product photo preparation</li>
+                <li>Real estate images</li>
+                <li>Content moderation</li>
             </ul>
         </div>
 
