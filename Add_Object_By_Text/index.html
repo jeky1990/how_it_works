@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibo Edit – Add Object by Text</title>
+
+    <style>
+        :root {
+            --bg: #0d0d0f;
+            --card: #16161a;
+            --text: #ffffff;
+            --subtext: #b5b5c0;
+            --accent: #4f9cff;
+            --border: #2a2a33;
+            --input: #101014;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+
+        .container {
+            padding: 16px;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--subtext);
+        }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 16px;
+            margin-top: 16px;
+            border: 1px solid var(--border);
+        }
+
+        /* Image row */
+        .image-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .image-row img {
+            width: 100%;
+            height: 110px;
+            object-fit: contain;
+            background: #0b0b0d;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        /* Prompt box */
+        .prompt-box {
+            margin-top: 14px;
+        }
+
+        .prompt-box textarea {
+            width: 100%;
+            min-height: 70px;
+            resize: none;
+            background: var(--input);
+            color: var(--text);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 12px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            gap: 12px;
+        }
+
+        .step {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .step span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* List */
+        ul {
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--subtext);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>➕ Add Object by Text</h1>
+        <p>Add new objects into an image using natural language instructions.</p>
+
+        <!-- Preview -->
+        <div class="card">
+            <h2>Before & After</h2>
+
+            <div class="image-row">
+                <!-- Before -->
+                <img src="https://bria-datasets.s3.us-east-1.amazonaws.com/Liza/an_empty_table_in_living_room.png"
+                    alt="Original Image" />
+
+                <!-- After -->
+                <img src="https://v3b.fal.media/files/b/0a8fe322/cbwoJH4bFIfl6TRUw7C5W_b26542feec4548ba8ce9c4ec7adf0499.png"
+                    alt="Object Added Image" />
+            </div>
+
+            <!-- Prompt -->
+            <div class="prompt-box">
+                <textarea readonly>Place a red vase with flowers on the table.</textarea>
+            </div>
+        </div>
+
+        <!-- What it does -->
+        <div class="card">
+            <h2>What This Template Does</h2>
+            <p>
+                Fibo Edit – Add Object by Text inserts new objects into an existing image
+                while maintaining perspective, lighting, and scene consistency.
+            </p>
+        </div>
+
+        <!-- How it works -->
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <span>1️⃣ Upload Image</span>
+                <p>Select an image where you want to add a new object.</p>
+            </div>
+
+            <div class="step">
+                <span>2️⃣ Describe the Object</span>
+                <p>Write what to add and where to place it.</p>
+            </div>
+
+            <div class="step">
+                <span>3️⃣ Generate</span>
+                <p>The AI inserts the object naturally into the scene.</p>
+            </div>
+        </div>
+
+        <!-- Use cases -->
+        <div class="card">
+            <h2>Best Use Cases</h2>
+            <ul>
+                <li>Interior design previews</li>
+                <li>Product placement</li>
+                <li>Creative photo edits</li>
+                <li>Marketing visuals</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
