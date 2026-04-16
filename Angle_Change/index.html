@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Perspective Change – How It Works</title>
+
+<style>
+:root {
+  --bg: #0d0d0f;
+  --card: #16161a;
+  --text: #ffffff;
+  --subtext: #b5b5c0;
+  --accent: #4f9cff;
+  --border: #2a2a33;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.container {
+  padding: 16px;
+  max-width: 480px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 20px 0 12px;
+}
+
+p {
+  font-size: 14px;
+  color: var(--subtext);
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid var(--border);
+}
+
+/* Side-by-side comparison */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.compare-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.compare-item img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Labels */
+.label {
+  font-size: 12px;
+  color: var(--subtext);
+}
+
+/* Pills */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--subtext);
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+}
+
+.step span {
+  color: var(--accent);
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>📐 Perspective Change</h1>
+  <p>Transform camera angles and perspectives using AI.</p>
+
+  <!-- Side by Side -->
+  <div class="card">
+    <h2>Input vs Output</h2>
+
+    <div class="compare-grid">
+
+      <!-- Input -->
+      <div class="compare-item">
+        <span class="label">Input</span>
+        <img src="https://v3b.fal.media/files/b/lion/aqEiZ8Ui6rxWUB-Ujfu79_52c238c6d75d45538eaa71c50d329ba0.png" />
+      </div>
+
+      <!-- Output -->
+      <div class="compare-item">
+        <span class="label">Output</span>
+        <img src="https://v3b.fal.media/files/b/zebra/Elbt2Bcigd6pVdLlbfsHV_e45937e851074d2d932363009504866d.png" />
+      </div>
+
+    </div>
+
+    <p style="margin-top:10px;">
+      AI changes the perspective while preserving subject and realism.
+    </p>
+  </div>
+
+  <!-- Info -->
+  <div class="card">
+    <h2>What is Perspective Change?</h2>
+    <p>
+      Adjust camera angle, depth, and viewpoint to generate a completely new
+      perspective of the same scene.
+    </p>
+
+    <div class="pills">
+      <div class="pill">Angle change</div>
+      <div class="pill">Depth control</div>
+      <div class="pill">Wide / close view</div>
+      <div class="pill">Realistic output</div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <h2>How It Works</h2>
+  <div class="steps">
+
+    <div class="step">
+      <span>1️⃣ Upload Image</span>
+      <p>Select a clear image.</p>
+    </div>
+
+    <div class="step">
+      <span>2️⃣ Choose Perspective</span>
+      <p>Select angle or reference.</p>
+    </div>
+
+    <div class="step">
+      <span>3️⃣ Generate</span>
+      <p>AI creates new perspective view.</p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
