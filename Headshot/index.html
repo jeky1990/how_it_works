@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Headshot Photo – How It Works</title>
+
+<style>
+:root {
+  --bg: #0d0d0f;
+  --card: #16161a;
+  --text: #ffffff;
+  --subtext: #b5b5c0;
+  --accent: #4f9cff;
+  --border: #2a2a33;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.container {
+  padding: 16px;
+  max-width: 480px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 20px 0 12px;
+}
+
+p {
+  font-size: 14px;
+  color: var(--subtext);
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid var(--border);
+}
+
+/* Input Grid */
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.input-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* BEFORE AFTER SLIDER */
+.before-after {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  max-height: 80vh;
+}
+
+/* Controls height */
+.before-after .size-ref {
+  position: relative;
+  width: 100%;
+  visibility: hidden;
+}
+
+.before-after img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.after-img {
+  clip-path: inset(0 0 0 50%);
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: var(--accent);
+}
+
+.slider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--accent);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 700;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 14px;
+}
+
+/* Pills */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--subtext);
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+}
+
+.step span {
+  color: var(--accent);
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>📸 Headshot Photo</h1>
+  <p>Convert casual photos into professional headshots using AI.</p>
+
+  <!-- Output -->
+  <div class="card">
+    <h2>Output (Before / After)</h2>
+
+    <div class="before-after">
+
+      <!-- Controls height -->
+      <img src="https://v3.fal.media/files/panda/oMob58qZJRtbDs5l45QKT_e3a1512c455d425fab2d62e07a51c506.png" class="size-ref" />
+
+      <!-- Before -->
+      <img src="https://v3.fal.media/files/panda/oMob58qZJRtbDs5l45QKT_e3a1512c455d425fab2d62e07a51c506.png" />
+
+      <!-- After -->
+      <img src="https://v3b.fal.media/files/b/penguin/n2f6ImUI9nJORdIibmpim_dfaeb84b0e894f62ae50ccaceb9704d3.png" class="after-img" />
+
+      <div class="slider"></div>
+      <div class="slider-handle">↔</div>
+
+    </div>
+
+    <input type="range" min="0" max="100" value="50" id="range">
+
+    <p>
+      Compare your original photo with AI-generated professional headshot.
+    </p>
+  </div>
+
+  <!-- Info -->
+  <div class="card">
+    <h2>What is Headshot Photo?</h2>
+    <p>
+      AI enhances your image into a clean, professional headshot suitable
+      for resumes, LinkedIn, and portfolios.
+    </p>
+
+    <div class="pills">
+      <div class="pill">Professional look</div>
+      <div class="pill">Studio lighting</div>
+      <div class="pill">Background cleanup</div>
+      <div class="pill">Face preserved</div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <h2>How It Works</h2>
+  <div class="steps">
+
+    <div class="step">
+      <span>1️⃣ Upload Photo</span>
+      <p>Select a clear image.</p>
+    </div>
+
+    <div class="step">
+      <span>2️⃣ Choose Style</span>
+      <p>Select professional style or reference.</p>
+    </div>
+
+    <div class="step">
+      <span>3️⃣ Generate</span>
+      <p>AI creates polished headshot.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+const range = document.getElementById("range");
+const afterImg = document.querySelector(".after-img");
+const slider = document.querySelector(".slider");
+const handle = document.querySelector(".slider-handle");
+
+range.addEventListener("input", (e) => {
+  const value = e.target.value;
+  afterImg.style.clipPath = `inset(0 0 0 ${value}%)`;
+  slider.style.left = value + "%";
+  handle.style.left = value + "%";
+});
+</script>
+
+</body>
+</html>
