@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Photo Restoration – How It Works</title>
+
+<style>
+:root {
+  --bg: #0d0d0f;
+  --card: #16161a;
+  --text: #ffffff;
+  --subtext: #b5b5c0;
+  --accent: #4f9cff;
+  --border: #2a2a33;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.container {
+  padding: 16px;
+  max-width: 480px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 20px 0 12px;
+}
+
+p {
+  font-size: 14px;
+  color: var(--subtext);
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid var(--border);
+}
+
+/* Comparison Grid */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.compare-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.compare-item img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Labels */
+.label {
+  font-size: 12px;
+  color: var(--subtext);
+}
+
+/* Pills */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--subtext);
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+}
+
+.step span {
+  color: var(--accent);
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🖼️ Photo Restoration</h1>
+  <p>Restore old, damaged, or low-quality photos using AI.</p>
+
+  <!-- Output Only -->
+  <div class="card">
+    <h2>Before vs After</h2>
+
+    <div class="compare-grid">
+
+      <!-- Before -->
+      <div class="compare-item">
+        <span class="label">Before</span>
+        <img src="https://v3.fal.media/files/panda/BcOIyOJ5Z1-GOjDi_GmsX_50e353c588c74435882f8f68989b4af5.png" />
+      </div>
+
+      <!-- After -->
+      <div class="compare-item">
+        <span class="label">After</span>
+        <img src="https://v3b.fal.media/files/b/zebra/grrkysWir2bvFTnubydQK_92e56e5831994be59e653611983d503f.png" />
+      </div>
+
+    </div>
+
+    <p style="margin-top:10px;">
+      AI restores clarity, removes noise, and enhances details.
+    </p>
+  </div>
+
+  <!-- Info -->
+  <div class="card">
+    <h2>What is Photo Restoration?</h2>
+    <p>
+      Photo Restoration uses AI to repair old or damaged images by improving
+      resolution, fixing scratches, and enhancing facial and background details.
+    </p>
+
+    <div class="pills">
+      <div class="pill">Noise removal</div>
+      <div class="pill">Scratch repair</div>
+      <div class="pill">Detail enhancement</div>
+      <div class="pill">Color correction</div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <h2>How It Works</h2>
+  <div class="steps">
+
+    <div class="step">
+      <span>1️⃣ Upload Photo</span>
+      <p>Select an old or damaged image.</p>
+    </div>
+
+    <div class="step">
+      <span>2️⃣ AI Processing</span>
+      <p>AI analyzes and restores image details.</p>
+    </div>
+
+    <div class="step">
+      <span>3️⃣ Get Result</span>
+      <p>Receive enhanced and restored photo.</p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
