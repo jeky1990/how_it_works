@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Virtual Try-On – How It Works</title>
+
+<style>
+:root {
+  --bg: #0d0d0f;
+  --card: #16161a;
+  --text: #ffffff;
+  --subtext: #b5b5c0;
+  --accent: #4f9cff;
+  --border: #2a2a33;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.container {
+  padding: 16px;
+  max-width: 480px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 20px 0 12px;
+}
+
+p {
+  font-size: 14px;
+  color: var(--subtext);
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid var(--border);
+}
+
+/* Input grid */
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.input-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Output */
+.output img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* Pills */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--subtext);
+}
+
+/* Steps */
+.steps {
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+}
+
+.step span {
+  color: var(--accent);
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>👕 Virtual Try-On</h1>
+  <p>Try outfits on yourself instantly using AI.</p>
+
+  <!-- Input -->
+  <div class="card">
+    <h2>Input</h2>
+
+    <div class="input-grid">
+      <!-- Person Image -->
+      <img src="https://v3.fal.media/files/tiger/4vxSHizex4UWR5fdnPs1A.jpeg" alt="Person" />
+
+      <!-- Clothing Image -->
+      <img src="https://v3b.fal.media/files/b/monkey/5ZWXSKUuk9EilI1apFCeu_1ecd050187f24b9aa1d2defb88d8d8ae.png" alt="Clothing" />
+    </div>
+
+    <p style="margin-top:10px;">
+      Upload a person image and a clothing item.
+    </p>
+  </div>
+
+  <!-- Output -->
+  <div class="card output">
+    <h2>Output</h2>
+
+    <img src="https://v3b.fal.media/files/b/panda/9w6wt7vgxjfmiBIoo6bjF_cb0ba7a150c84f159e9d40af2d439401.png" alt="Generated Try-On" />
+
+    <p>
+      AI generates a realistic image of the person wearing the selected outfit.
+    </p>
+  </div>
+
+  <!-- Info -->
+  <div class="card">
+    <h2>What is Virtual Try-On?</h2>
+    <p>
+      Virtual Try-On uses AI to combine a person image with a clothing item,
+      creating a realistic preview of how the outfit would look when worn.
+    </p>
+
+    <div class="pills">
+      <div class="pill">Outfit preview</div>
+      <div class="pill">Realistic fitting</div>
+      <div class="pill">Fashion styling</div>
+      <div class="pill">E-commerce ready</div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <h2>How It Works</h2>
+  <div class="steps">
+
+    <div class="step">
+      <span>1️⃣ Upload Photo</span>
+      <p>Select a person image.</p>
+    </div>
+
+    <div class="step">
+      <span>2️⃣ Add Clothing</span>
+      <p>Upload outfit or clothing item.</p>
+    </div>
+
+    <div class="step">
+      <span>3️⃣ Generate</span>
+      <p>AI fits the clothing onto the person realistically.</p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
